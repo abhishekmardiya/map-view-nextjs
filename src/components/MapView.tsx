@@ -98,6 +98,7 @@ export default function RealEstateMap() {
           // !EXTRA:animation
           animation={google?.maps?.Animation?.DROP}
           cursor="pointer"
+          icon="/null.svg"
           label={{
             text: `₹${property?.price}`,
             className:
