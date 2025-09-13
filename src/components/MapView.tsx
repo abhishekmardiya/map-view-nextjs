@@ -89,6 +89,12 @@ export default function RealEstateMap() {
       }}
       center={center}
       zoom={13}
+      options={{
+        // https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
+        // "poi" stands for "Point of Interest" (like restaurants, shops, landmarks) on the map.
+        // The following style hides these POIs from the map display.
+        styles: [{ featureType: "poi", stylers: [{ visibility: "off" }] }],
+      }}
     >
       {properties?.map((property) => (
         <Marker
