@@ -94,6 +94,8 @@ export default function RealEstateMap() {
         // "poi" stands for "Point of Interest" (like restaurants, shops, landmarks) on the map.
         // The following style hides these POIs from the map display.
         styles: [{ featureType: "poi", stylers: [{ visibility: "off" }] }],
+        zoomControl: true,
+        scaleControl: true,
       }}
     >
       {properties?.map((property) => (
