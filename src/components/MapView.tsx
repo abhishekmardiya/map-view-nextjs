@@ -78,7 +78,7 @@ export default function RealEstateMap() {
   );
 
   if (!isLoaded) {
-    return <div>Loading Map...</div>;
+    return <div className="animate-pulse w-screen h-screen bg-slate-700" />;
   }
 
   return (
@@ -95,14 +95,12 @@ export default function RealEstateMap() {
           key={property?.id}
           position={{ lat: property?.lat, lng: property?.lng }}
           onClick={() => setSelectedProperty(property)}
-          // !EXTRA:animation
-          animation={google?.maps?.Animation?.DROP}
           cursor="pointer"
           icon="/null.svg"
           label={{
             text: `₹${property?.price}`,
             className:
-              "bg-white text-black rounded px-1 font-extrabold shadow-2xl border border-gray-500",
+              "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 !text-white rounded-full px-2 py-1 font-extrabold shadow-xl border-2 border-white drop-shadow-lg shadow-2xl",
           }}
         />
       ))}
